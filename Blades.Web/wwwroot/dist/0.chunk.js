@@ -59,13 +59,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 var AboutComponent = (function () {
     function AboutComponent() {
-        this.message = "Hello from AboutComponent constructor";
+        this.message = 'Hello from AboutComponent constructor';
     }
     return AboutComponent;
 }());
 AboutComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["b" /* Component */])({
-        selector: "about-component",
+        selector: 'about-component',
         template: __webpack_require__(490)
     }),
     __metadata("design:paramtypes", [])
@@ -85,7 +85,7 @@ AboutComponent = __decorate([
 
 
 var routes = [
-    { path: "", component: __WEBPACK_IMPORTED_MODULE_1__components_about_component__["a" /* AboutComponent */] }
+    { path: '', component: __WEBPACK_IMPORTED_MODULE_1__components_about_component__["a" /* AboutComponent */] }
 ];
 var AboutRoutes = __WEBPACK_IMPORTED_MODULE_0__angular_router__["a" /* RouterModule */].forChild(routes);
 

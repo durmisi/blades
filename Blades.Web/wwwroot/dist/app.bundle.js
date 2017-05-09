@@ -2928,7 +2928,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 var Configuration = (function () {
     function Configuration() {
-        this.Server = "http://localhost:5000/";
+        this.Server = '/';
     }
     return Configuration;
 }());
@@ -2969,7 +2969,7 @@ var ThingService = (function () {
         this.http = http;
         this.configuration = configuration;
         this.GetAll = function () {
-            return _this.http.post(_this.actionUrl + "all/", "", { headers: _this.headers }).map(function (response) { return response.json(); });
+            return _this.http.post(_this.actionUrl + 'all/', '', { headers: _this.headers }).map(function (response) { return response.json(); });
         };
         this.GetSingle = function (id) {
             return _this.http.get(_this.actionUrl + id).map(function (res) { return res.json(); });
@@ -2986,10 +2986,10 @@ var ThingService = (function () {
         this.Delete = function (id) {
             return _this.http.delete(_this.actionUrl + id);
         };
-        this.actionUrl = configuration.Server + "api/things/";
+        this.actionUrl = configuration.Server + 'api/things/';
         this.headers = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["b" /* Headers */]();
-        this.headers.append("Content-Type", "application/json");
-        this.headers.append("Accept", "application/json");
+        this.headers.append('Content-Type', 'application/json');
+        this.headers.append('Accept', 'application/json');
     }
     return ThingService;
 }());
@@ -3027,7 +3027,7 @@ var HomeComponent = (function () {
         this.dataService = dataService;
         this.things = [];
         this.thing = new __WEBPACK_IMPORTED_MODULE_1__models_thing__["a" /* Thing */]();
-        this.message = "Things from the ASP.NET Core API";
+        this.message = 'Things from the ASP.NET Core API';
     }
     HomeComponent.prototype.ngOnInit = function () {
         this.getAllThings();
@@ -3057,13 +3057,13 @@ var HomeComponent = (function () {
         var _this = this;
         this.dataService
             .GetAll()
-            .subscribe(function (data) { return _this.things = data; }, function (error) { return console.log(error); }, function () { return console.log("Get all complete"); });
+            .subscribe(function (data) { return _this.things = data; }, function (error) { return console.log(error); }, function () { return console.log('Get all complete'); });
     };
     return HomeComponent;
 }());
 HomeComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__angular_core__["b" /* Component */])({
-        selector: "home-component",
+        selector: 'home-component',
         template: __webpack_require__(452)
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__core_services_thing_data_service__["a" /* ThingService */]])
@@ -36810,7 +36810,7 @@ var AppComponent = (function () {
 }());
 AppComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["b" /* Component */])({
-        selector: "my-app",
+        selector: 'my-app',
         template: __webpack_require__(451)
     })
 ], AppComponent);
@@ -36828,8 +36828,8 @@ AppComponent = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_router__ = __webpack_require__(84);
 
 var routes = [
-    { path: "", redirectTo: "home", pathMatch: "full" },
-    { path: "about", loadChildren: function () { return new Promise(function (resolve) { __webpack_require__.e/* require.ensure */(0).then((function (require) { resolve(__webpack_require__(487)['AboutModule']); }).bind(null, __webpack_require__)).catch(__webpack_require__.oe); }); } },
+    { path: '', redirectTo: 'home', pathMatch: 'full' },
+    { path: 'about', loadChildren: function () { return new Promise(function (resolve) { __webpack_require__.e/* require.ensure */(0).then((function (require) { resolve(__webpack_require__(487)['AboutModule']); }).bind(null, __webpack_require__)).catch(__webpack_require__.oe); }); } },
 ];
 var AppRoutes = __WEBPACK_IMPORTED_MODULE_0__angular_router__["a" /* RouterModule */].forRoot(routes);
 
@@ -36941,7 +36941,7 @@ HomeModule = __decorate([
 
 
 var routes = [
-    { path: "home", component: __WEBPACK_IMPORTED_MODULE_1__components_home_component__["a" /* HomeComponent */] }
+    { path: 'home', component: __WEBPACK_IMPORTED_MODULE_1__components_home_component__["a" /* HomeComponent */] }
 ];
 var HomeRoutes = __WEBPACK_IMPORTED_MODULE_0__angular_router__["a" /* RouterModule */].forChild(routes);
 
@@ -36984,7 +36984,7 @@ var CustomFooterComponent = (function () {
 }());
 CustomFooterComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["b" /* Component */])({
-        selector: "customfooter",
+        selector: 'customfooter',
         template: __webpack_require__(453)
     })
 ], CustomFooterComponent);
