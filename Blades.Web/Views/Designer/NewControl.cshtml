@@ -1,0 +1,44 @@
+﻿@model dynamic
+
+@{
+    ViewBag.Title = "New Blade";
+    Layout = "_DesignerLayout";
+}
+
+
+<h3>
+    New control
+</h3>  <hr />
+
+<div class="row">
+    <div class="col-md-6">
+
+        <div class="form-group">
+            <label class="control-label">
+                Name:
+            </label>
+            <input type="text" class="form-control" />
+        </div>
+
+        <div class="form-group">
+            <label class="control-label">
+                Title:
+            </label>
+            <input type="text" class="form-control" />
+        </div>
+
+        <div class="form-group">
+            <label class="control-label">
+                Upload:
+            </label> <div style="border: dotted 1px #000; background: #e2e2e2; padding: 25px; text-align: center; font-weight: bold">
+                Select file..
+            </div>
+        </div>
+
+        <div class="form-group">
+            <button class="btn btn-success">Save</button>
+            <button class="btn btn-default">Cancel</button>
+        </div>
+
+    </div>
+</div>

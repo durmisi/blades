@@ -1,0 +1,109 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewData["Title"]</title>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <base href="/" />
+    <link rel="stylesheet" href="~/app/app.css" asp-append-version="true" />
+
+</head>
+<body class="loaded coreui-theme-blue">
+<div class="coreui-portal">
+    <div class="coreui-topbar">
+        <div class="coreui-topbar-title">Blade Designer</div>
+        <div class="coreui-topbar-breadcrumb"></div>
+        <div class="coreui-topbar-user"><span data-bind="text: userName"></span> <i class="fa fa-user"></i></div>
+    </div>
+    <div class="coreui-portal-main">
+        <div class="coreui-sidebar coreui-sidebar-is-collapsed" id="mySidenav">
+            <div class="coreui-sidebar-bar">
+                <button class="coreui-sidebar-collapse-button" title="Open menu" id="mySidenavButton">
+                    <i class="fa fa-bars fa-fw fa-lg"></i>
+                </button>
+                <ul class="coreui-sidebar-favourites">
+                    <li>
+                        <a href="#" title="Dashboard" data-bind="click: function() { alert('test') }">
+                            <div class="coreui-sidebar-icon"><i class="fa fa-home fa-fw fa-lg"></i></div>
+                            <div class="coreui-sidebar-label">Dashboard</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" title="Explore" data-bind="click: addBlade.bind($data, 'Explore', '', 'blade-size-medium', 'blank.html', [])">
+                            <div class="coreui-sidebar-icon"><i class="fa fa-search fa-fw fa-lg"></i></div>
+                            <div class="coreui-sidebar-label">Explore</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" title="Visualize" data-bind="click: addBlade.bind($data, 'Visualize', 'My resources', 'blade-size-small', 'blank.html', [])">
+                            <div class="coreui-sidebar-icon"><i class="fa fa-sitemap fa-fw fa-lg"></i></div>
+                            <div class="coreui-sidebar-label">Visualize</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" title="Settings" data-bind="click: addBlade.bind($data, 'Settings', '', 'blade-size-small', 'settings.html', [])">
+                            <div class="coreui-sidebar-icon"><i class="fa fa-cogs fa-fw fa-lg"></i></div>
+                            <div class="coreui-sidebar-label">Settings</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" title="More applications" data-bind="click: addBlade.bind($data, 'More applications', '', 'blade-size-small', 'applications.html', [])">
+                            <div class="coreui-sidebar-icon"><i class="fa fa-ellipsis-h fa-fw fa-lg"></i></div>
+                            <div class="coreui-sidebar-label">More applications</div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="coreui-portal-content">
+            <div class="coreui-blade-layout">
+                <!-- ko foreach: blades -->
+                <div class="blade" data-bind="css: bladeSize">
+                    <div class="blade-header">
+                        <div class="blade-header-title">
+                            <h2 data-bind="text: title"></h2>
+                            <h3 data-bind="text: subTitle"></h3>
+                        </div>
+                        <div class="blade-actions">
+                            <button title="Expand" type="button">
+                                <i class="fa fa-expand fa-lg"></i>
+                            </button>
+                            <button title="Close" type="button" data-bind="click: $parent.removeBlade">
+                                <i class="fa fa-close fa-lg"></i>
+                            </button>
+                        </div>
+                        <div class="blade-commands">
+                            <!-- ko foreach: commands -->
+                            <button type="button" data-bind="attr: { title: title }, click: click">
+                                <i class="fa fa-lg" data-bind="css: icon"></i> <span data-bind="text: title"></span>
+                            </button>
+                            <!-- /ko -->
+                        </div>
+                    </div>
+                    <div class="blade-content-wrapper" data-bind="dynamicHtml: content">
+                    </div>
+                </div>
+                <!-- /ko -->
+            </div>
+        </div>
+
+        @RenderBody()
+
+        @RenderSection("scripts", required: false)
+
+    </div>
+</div>
+<div class="coreui-splashscreen">
+    <div class="coreui-splashscreen-logo">
+        <svg xmlns="http://www.w3.org/2000/svg" width="75" height="75" viewBox="0 0 23 23" overflow="hidden">
+            <path d="m22.475,11.311033c-4.76,2.630984 -8.641983,6.644968 -11.113964,11.499964c-2.472992,-4.853996 -6.353992,-8.868979 -11.110994,-11.495958l11.113994,-11.118995l11.110964,11.114989l0,0z"></path>
+        </svg>
+    </div>
+</div>
+<script src="/bower_components/knockout/dist/knockout.js"></script>
+<script src="https://use.fontawesome.com/47fb412963.js"></script>
+<script src="/app/app.js"></script>
+</body>
+</html>

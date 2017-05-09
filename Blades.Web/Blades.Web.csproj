@@ -1,0 +1,109 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp1.1</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <PackageTargetFallback>$(PackageTargetFallback);portable-net45+win8+wp8+wpa81;</PackageTargetFallback>
+  </PropertyGroup>
+
+  <ItemGroup>
+   
+    <Content Remove="wwwroot\app\**" />
+    <EmbeddedResource Remove="wwwroot\app\**" />
+    <None Remove="wwwroot\app\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore" Version="1.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="1.1.2" />
+    <PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="1.1.1" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="1.1.1" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.BrowserLink" Version="1.1.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="1.0.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app\components\about\about.module.js" />
+    <None Include="app\components\about\about.module.js.map" />
+    <None Include="app\components\about\about.module.ts" />
+    <None Include="app\components\about\about.routes.js" />
+    <None Include="app\components\about\about.routes.js.map" />
+    <None Include="app\components\about\about.routes.ts" />
+    <None Include="app\components\about\components\about.component.html" />
+    <None Include="app\components\about\components\about.component.js" />
+    <None Include="app\components\about\components\about.component.js.map" />
+    <None Include="app\components\about\components\about.component.ts" />
+    <None Include="app\components\app.component.html" />
+    <None Include="app\components\app.component.js" />
+    <None Include="app\components\app.component.js.map" />
+    <None Include="app\components\app.component.scss" />
+    <None Include="app\components\app.component.ts" />
+    <None Include="app\components\app.constants.js" />
+    <None Include="app\components\app.constants.js.map" />
+    <None Include="app\components\app.constants.ts" />
+    <None Include="app\components\app.module.js" />
+    <None Include="app\components\app.module.js.map" />
+    <None Include="app\components\app.module.ts" />
+    <None Include="app\components\app.routes.js" />
+    <None Include="app\components\app.routes.js.map" />
+    <None Include="app\components\app.routes.ts" />
+    <None Include="app\components\core\core.module.js" />
+    <None Include="app\components\core\core.module.js.map" />
+    <None Include="app\components\core\core.module.ts" />
+    <None Include="app\components\core\services\thing-data.service.js" />
+    <None Include="app\components\core\services\thing-data.service.js.map" />
+    <None Include="app\components\core\services\thing-data.service.ts" />
+    <None Include="app\components\home\components\home.component.html" />
+    <None Include="app\components\home\components\home.component.js" />
+    <None Include="app\components\home\components\home.component.js.map" />
+    <None Include="app\components\home\components\home.component.ts" />
+    <None Include="app\components\home\home.module.js" />
+    <None Include="app\components\home\home.module.js.map" />
+    <None Include="app\components\home\home.module.ts" />
+    <None Include="app\components\home\home.routes.js" />
+    <None Include="app\components\home\home.routes.js.map" />
+    <None Include="app\components\home\home.routes.ts" />
+    <None Include="app\components\models\thing.js" />
+    <None Include="app\components\models\thing.js.map" />
+    <None Include="app\components\models\thing.ts" />
+    <None Include="app\components\shared\components\customfooter\customfooter.component.html" />
+    <None Include="app\components\shared\components\customfooter\customfooter.component.js" />
+    <None Include="app\components\shared\components\customfooter\customfooter.component.js.map" />
+    <None Include="app\components\shared\components\customfooter\customfooter.component.ts" />
+    <None Include="app\components\shared\components\navigation\navigation.component.html" />
+    <None Include="app\components\shared\components\navigation\navigation.component.js" />
+    <None Include="app\components\shared\components\navigation\navigation.component.js.map" />
+    <None Include="app\components\shared\components\navigation\navigation.component.ts" />
+    <None Include="app\components\shared\shared.module.js" />
+    <None Include="app\components\shared\shared.module.js.map" />
+    <None Include="app\components\shared\shared.module.ts" />
+    <None Include="app\images\damienbod.jpg" />
+    <None Include="app\images\fabianGosebrink.jpg" />
+    <None Include="app\images\RobertoSimonetti.jpg" />
+    <None Include="app\index.html" />
+    <None Include="app\main.js" />
+    <None Include="app\main.js.map" />
+    <None Include="app\main.ts" />
+    <None Include="app\polyfills.js" />
+    <None Include="app\polyfills.js.map" />
+    <None Include="app\polyfills.ts" />
+    <None Include="app\style\app.scss" />
+    <None Include="app\vendor.js" />
+    <None Include="app\vendor.js.map" />
+    <None Include="app\vendor.ts" />
+    <None Include="favicon.ico" />
+    <None Include="webpack.config.js" />
+    <None Include="webpack.dev.js" />
+    <None Include="webpack.helpers.js" />
+    <None Include="webpack.prod.js" />
+    <None Include="yarn.lock" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="wwwroot\" />
+  </ItemGroup>
+
+</Project>
