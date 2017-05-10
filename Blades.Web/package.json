@@ -6,13 +6,13 @@
   "author": "",
   "license": "ISC",
   "scripts": {
-    "start": "concurrently \"npm run build-dev\" \"webpack-dev-server --hot --inline --port 8080\" ",
+    "start": "concurrently \"webpack-dev-server --hot --inline --port 8080\" \"dotnet run ASPNETCORE_ENVIRONMENT=Development\"",
     "build-dev": "set NODE_ENV=development && webpack",
     "build-production": "set NODE_ENV=production && webpack",
     "watch-dev": "set NODE_ENV=development && webpack --watch --color",
     "watch-production": "npm run build-production --watch --color",
     "dotnet-build": "dotnet build",
-    "dotnet-web": "dotnet web",
+    "dotnet-run": "dotnet run",
     "publish-for-iis": "npm run build-production && dotnet publish -c Release",
     "test": "karma start"
   },
@@ -37,7 +37,9 @@
     "jquery": "^3.2.1",
     "reflect-metadata": "0.1.10",
     "rxjs": "5.3.0",
-    "zone.js": "0.8.8"
+    "zone.js": "0.8.8",
+    "devextreme": "17.1.2-beta",
+    "devextreme-angular": "17.1.2-beta.1"
   },
   "devDependencies": {
     "@types/node": "7.0.13",
