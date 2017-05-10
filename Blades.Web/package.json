@@ -7,12 +7,13 @@
   "license": "ISC",
   "scripts": {
     "start": "concurrently \"webpack-dev-server --hot --inline --port 8080\" \"dotnet run ASPNETCORE_ENVIRONMENT=Development\"",
-    "build-dev": "set NODE_ENV=development && webpack",
-    "build-production": "set NODE_ENV=production && webpack",
+
+    "build-dev": "concurrently \"set NODE_ENV=development && webpack\" \"dotnet build\" ",
+    "build-production": "concurrently \"set NODE_ENV=production && webpack\" \"dotnet build\" ",
+
     "watch-dev": "set NODE_ENV=development && webpack --watch --color",
     "watch-production": "npm run build-production --watch --color",
-    "dotnet-build": "dotnet build",
-    "dotnet-run": "dotnet run",
+        
     "publish-for-iis": "npm run build-production && dotnet publish -c Release",
     "test": "karma start"
   },
@@ -30,16 +31,18 @@
     "@angular/router": "4.1.0",
     "@angular/upgrade": "4.1.0",
     "@ng-bootstrap/ng-bootstrap": "^1.0.0-alpha.25",
+    "@ng2-dynamic-forms/core": "^1.4.9",
+    "@ng2-dynamic-forms/ui-ng-bootstrap": "^1.4.9",
     "angular-in-memory-web-api": "0.3.1",
     "bootstrap": "^3.3.7",
     "core-js": "2.4.1",
+    "devextreme": "17.1.2-beta",
+    "devextreme-angular": "17.1.2-beta.1",
     "ie-shim": "~0.1.0",
     "jquery": "^3.2.1",
     "reflect-metadata": "0.1.10",
     "rxjs": "5.3.0",
-    "zone.js": "0.8.8",
-    "devextreme": "17.1.2-beta",
-    "devextreme-angular": "17.1.2-beta.1"
+    "zone.js": "0.8.8"
   },
   "devDependencies": {
     "@types/node": "7.0.13",
