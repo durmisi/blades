@@ -44,7 +44,6 @@
     <None Include="app\components\models\thing.ts" />
     <None Include="app\components\shared\components\customfooter\customfooter.component.html" />
     <None Include="app\components\shared\components\customfooter\customfooter.component.ts" />
-    <None Include="app\components\shared\components\navigation\navigation.component.html" />
     <None Include="app\components\shared\shared.module.ts" />
     <None Include="app\images\damienbod.jpg" />
     <None Include="app\images\fabianGosebrink.jpg" />

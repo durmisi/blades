@@ -4,7 +4,7 @@ import './app.component.css';
 import '../style/app.css';
 
 @Component({
-    selector: 'my-app',
+    selector: 'blade-app',
     templateUrl: 'app.component.html'
 })
 

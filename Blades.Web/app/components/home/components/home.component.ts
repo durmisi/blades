@@ -6,7 +6,6 @@ import { Component, OnInit } from '@angular/core';
     selector: 'home-component',
     templateUrl: 'home.component.html'
 })
-
 export class HomeComponent implements OnInit {
 
     public message: string;
@@ -18,7 +17,7 @@ export class HomeComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.getAllThings();
+        //this.getAllThings();
     }
 
     public addThing() {

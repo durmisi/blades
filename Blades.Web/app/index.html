@@ -7,8 +7,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Angular Webpack Template</title>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <script src="https://use.fontawesome.com/47fb412963.js"></script>
+
 </head>
-<body>
-    <my-app>Loading...</my-app>
+<body class="loaded coreui-theme-blue">
+    <blade-app>
+
+        <style type="text/css">
+            /* Splashscreen */
+            .coreui-splashscreen {
+                position: fixed;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                background-color: #2e80ab;
+                z-index: 1000;
+            }
+
+            .loaded .coreui-splashscreen {
+                visibility: hidden;
+                opacity: 0;
+                -webkit-transition: visibility 1s, opacity 0.5s ease-out;
+                transition: visibility 1s, opacity 0.5s ease-out;
+            }
+
+            .coreui-splashscreen-logo {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100%;
+            }
+
+                .coreui-splashscreen-logo > svg {
+                    fill: #fff !important;
+                }
+        </style>
+
+        <div class="coreui-portal">
+            <div class="coreui-splashscreen" style="visibility: visible; opacity: 0.7;">
+                <div class="coreui-splashscreen-logo">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="75" height="75" viewBox="0 0 23 23">
+                        <path d="m22.475,11.311033c-4.76,2.630984 -8.641983,6.644968 -11.113964,11.499964c-2.472992,-4.853996 -6.353992,-8.868979 -11.110994,-11.495958l11.113994,-11.118995l11.110964,11.114989l0,0z">
+                        </path>
+                    </svg>
+                    <span style="color: #fff; padding-left: 10px">Loading ...</span>
+                </div>
+            </div>
+        </div>
+
+    </blade-app>
 </body>
 </html>

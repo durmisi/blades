@@ -1,9 +1,48 @@
-﻿<navigation></navigation>
+﻿<div class="coreui-portal">
+    <top-navigation></top-navigation>
 
-<div class="container">
-   
-    <router-outlet></router-outlet>
-
-    <customfooter></customfooter>
+    <div class="coreui-portal-main">
+        <div class="coreui-sidebar coreui-sidebar-is-collapsed">
+            <div class="coreui-sidebar-bar">
+                <button class="coreui-sidebar-collapse-button" title="Open menu">
+                    <i class="fa fa-bars fa-fw fa-lg"></i>
+                </button>
+                <ul class="coreui-sidebar-favourites">
+                    <li>
+                        <a href="#" title="Dashboard" data-bind="click: function() { alert('test') }">
+                            <div class="coreui-sidebar-icon"><i class="fa fa-home fa-fw fa-lg"></i></div>
+                            <div class="coreui-sidebar-label">Dashboard</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" title="Explore" data-bind="click: addBlade.bind($data, 'Explore', '', 'blade-size-medium', 'blank.html', [])">
+                            <div class="coreui-sidebar-icon"><i class="fa fa-search fa-fw fa-lg"></i></div>
+                            <div class="coreui-sidebar-label">Explore</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" title="Visualize" data-bind="click: addBlade.bind($data, 'Visualize', 'My resources', 'blade-size-small', 'blank.html', [])">
+                            <div class="coreui-sidebar-icon"><i class="fa fa-sitemap fa-fw fa-lg"></i></div>
+                            <div class="coreui-sidebar-label">Visualize</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" title="Settings" data-bind="click: addBlade.bind($data, 'Settings', '', 'blade-size-small', 'settings.html', [])">
+                            <div class="coreui-sidebar-icon"><i class="fa fa-cogs fa-fw fa-lg"></i></div>
+                            <div class="coreui-sidebar-label">Settings</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" title="More applications" data-bind="click: addBlade.bind($data, 'More applications', '', 'blade-size-small', 'applications.html', [])">
+                            <div class="coreui-sidebar-icon"><i class="fa fa-ellipsis-h fa-fw fa-lg"></i></div>
+                            <div class="coreui-sidebar-label">More applications</div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="coreui-portal-content">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
 </div>
-
