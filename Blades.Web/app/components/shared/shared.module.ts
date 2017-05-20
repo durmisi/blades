@@ -1,7 +1,7 @@
 import { CustomFooterComponent } from './components/customfooter/customfooter.component';
-import { TopNavigationComponent } from './components/navigation/topnavigation.component';
+import { MainNavComponent } from './components/main-nav/main-nav.component';
 import { RouterModule } from '@angular/router';
-import { NgModule, ModuleWithProviders } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @NgModule({
@@ -11,14 +11,16 @@ import { CommonModule } from '@angular/common';
     ],
 
     declarations: [
-        TopNavigationComponent,
+        MainNavComponent,
         CustomFooterComponent
     ],
 
     exports: [
-        TopNavigationComponent,
+        MainNavComponent,
         CustomFooterComponent
     ]
 })
 
-export class SharedModule { }
+export class SharedModule {
+    
+}
