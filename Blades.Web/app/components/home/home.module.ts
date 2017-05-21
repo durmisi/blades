@@ -5,7 +5,6 @@ import { FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { SharedModule } from '../shared/shared.module';
-import { BladeModule } from '../blade/blade.module';
 import { HomeRoutes } from './home.routes';
 import { HomeComponent } from './components/home.component';
 
