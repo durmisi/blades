@@ -15,8 +15,14 @@ import { AppComponent } from './app.component';
 
 @NgModule({
     imports: [
-        NgbModule.forRoot(),
         BrowserModule,
+        CommonModule,
+        FormsModule,
+        FormsModule,
+        HttpModule,
+        NgbModule.forRoot(),
+
+
         AppRoutes,
         SharedModule,
         CoreModule.forRoot(),
@@ -27,7 +33,7 @@ import { AppComponent } from './app.component';
         AppComponent
     ],
 
-    bootstrap: [AppComponent],
+    bootstrap: [AppComponent]
 })
 
 export class AppModule { }

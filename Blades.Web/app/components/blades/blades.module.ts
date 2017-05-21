@@ -21,6 +21,4 @@ import { CommonModule } from '@angular/common';
     ]
 })
 
-export class BladesModule {
-    
-}
+export class BladesModule {}

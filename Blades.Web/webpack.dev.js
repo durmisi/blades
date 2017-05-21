@@ -12,7 +12,7 @@ console.log('@@@@@@@@@ USING DEVELOPMENT @@@@@@@@@@@@@@@');
 
 module.exports = {
 
-    devtool: 'source-map',
+    devtool: 'eval',
     performance: {
         hints: false
     },

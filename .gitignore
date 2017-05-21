@@ -357,3 +357,5 @@ __pycache__/
 *.xsd.cs
 
 # End of https://www.gitignore.io/api/node,visualstudio,visualstudiocode
+/Blades.Web/app/components/blade
+/Blades.Web/app/components/blade/components

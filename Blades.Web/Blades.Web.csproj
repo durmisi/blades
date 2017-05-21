@@ -9,10 +9,23 @@
   </PropertyGroup>
 
   <ItemGroup>
-   
-    <Content Remove="wwwroot\app\**" />
-    <EmbeddedResource Remove="wwwroot\app\**" />
-    <None Remove="wwwroot\app\**" />
+    <Compile Remove="wwwroot\assets\**" />
+    <Compile Remove="wwwroot\dist\**" />
+    <Content Remove="wwwroot\assets\**" />
+    <Content Remove="wwwroot\dist\**" />
+    <EmbeddedResource Remove="wwwroot\assets\**" />
+    <EmbeddedResource Remove="wwwroot\dist\**" />
+    <None Remove="wwwroot\assets\**" />
+    <None Remove="wwwroot\dist\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="wwwroot/favicon.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="wwwroot\favicon.ico" />
+    <Content Include="wwwroot\index.html" />
   </ItemGroup>
 
   <ItemGroup>
