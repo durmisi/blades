@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { SharedModule } from '../shared/shared.module';
-import { BladesModule } from '../blades/blades.module';
+import { BladeModule } from '../blade/blade.module';
 import { HomeRoutes } from './home.routes';
 import { HomeComponent } from './components/home.component';
 
@@ -16,8 +16,7 @@ import { HomeComponent } from './components/home.component';
         FormsModule,
         HttpModule,
         HomeRoutes,
-        SharedModule,
-        BladesModule
+        SharedModule
     ],
 
     declarations: [
@@ -28,5 +27,4 @@ import { HomeComponent } from './components/home.component';
         HomeComponent
     ]
 })
-
 export class HomeModule { }

@@ -10,7 +10,7 @@ import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SharedModule } from '../shared/shared.module';
-import { BladesModule } from '../blades/blades.module';
+import { BladesModule } from '../blade/blade.module';
 import { HomeRoutes } from './home.routes';
 import { HomeComponent } from './components/home.component';
 var HomeModule = (function () {

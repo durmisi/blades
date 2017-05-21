@@ -1,5 +1,4 @@
 import { Routes, RouterModule } from '@angular/router';
-
 import { AboutComponent } from './components/about.component';
 
 const routes: Routes = [
