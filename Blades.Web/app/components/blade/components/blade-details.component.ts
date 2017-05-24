@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Blade } from '../../core/models';
+import { Blade } from '../../models/models';
 
 @Component({
     selector: 'blade-details',
@@ -41,10 +41,11 @@ export class BladeDetailsComponent implements OnInit, OnDestroy {
     }
 
     expandBlade(blade: Blade) {
-        if (blade.fullScreenClass == null)
+        if (blade.fullScreenClass == null) {
             blade.fullScreenClass = 'blade_full_screen';
-        else
-            blade.fullScreenClass = null;
+        } else {
+             blade.fullScreenClass = null;
+        }
     }
     removeBlade(blade: Blade) {
         let index = this.activeBlades.indexOf(blade);

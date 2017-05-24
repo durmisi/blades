@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Blade } from  '../../../core/models';
+import { Blade } from '../../../models/models';
 
 @Component({
     selector: 'blade-nav',
@@ -12,8 +12,7 @@ export class BladeNavComponent implements OnInit {
     ngOnInit(): void {
         this.blades = new Array<Blade>();
 
-      
-      let  b = new Blade();
+        let b = new Blade();
         b.name = 'Explore';
         b.title = 'Explore';
         b.class = 'fa fa-search fa-fw fa-lg';

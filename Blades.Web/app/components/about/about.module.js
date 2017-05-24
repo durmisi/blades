@@ -21,7 +21,7 @@ AboutModule = __decorate([
         ],
         declarations: [
             AboutComponent
-        ],
+        ]
     })
 ], AboutModule);
 export { AboutModule };

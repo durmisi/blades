@@ -72,8 +72,5 @@
     <None Include="wwwroot\app.css" />
     <None Include="yarn.lock" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="app\components\models\" />
-  </ItemGroup>
 
 </Project>
