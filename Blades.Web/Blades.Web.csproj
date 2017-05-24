@@ -69,7 +69,6 @@
     <None Include="webpack.dev.js" />
     <None Include="webpack.helpers.js" />
     <None Include="webpack.prod.js" />
-    <None Include="wwwroot\app.css" />
     <None Include="yarn.lock" />
   </ItemGroup>
 

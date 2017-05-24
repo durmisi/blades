@@ -52,7 +52,6 @@ namespace Blades.Web
 
             ServeFromDirectory(app, env, "node_modules");
 
-
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
