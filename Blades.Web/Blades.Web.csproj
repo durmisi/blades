@@ -54,7 +54,6 @@
     <None Include="app\components\home\components\home.component.ts" />
     <None Include="app\components\home\home.module.ts" />
     <None Include="app\components\home\home.routes.ts" />
-    <None Include="app\components\models\thing.ts" />
     <None Include="app\components\shared\components\customfooter\customfooter.component.html" />
     <None Include="app\components\shared\components\customfooter\customfooter.component.ts" />
     <None Include="app\components\shared\shared.module.ts" />
@@ -72,6 +71,9 @@
     <None Include="webpack.prod.js" />
     <None Include="wwwroot\app.css" />
     <None Include="yarn.lock" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="app\components\models\" />
   </ItemGroup>
 
 </Project>

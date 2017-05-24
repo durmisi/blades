@@ -1,0 +1,34 @@
+webpackJsonp([0],{
+
+/***/ 566:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("Object.defineProperty(__webpack_exports__, \"__esModule\", { value: true });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"BladeModule\", function() { return BladeModule; });\n/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);\n/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__(11);\n/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__shared_shared_module__ = __webpack_require__(157);\n/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__blade_routes__ = __webpack_require__(570);\n/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_blade_details_component__ = __webpack_require__(568);\nvar __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {\r\n    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;\r\n    if (typeof Reflect === \"object\" && typeof Reflect.decorate === \"function\") r = Reflect.decorate(decorators, target, key, desc);\r\n    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;\r\n    return c > 3 && r && Object.defineProperty(target, key, r), r;\r\n};\r\n\r\n\r\n\r\n\r\n\r\nvar BladeModule = (function () {\r\n    function BladeModule() {\r\n    }\r\n    return BladeModule;\r\n}());\r\nBladeModule = __decorate([\r\n    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__[\"a\" /* NgModule */])({\r\n        imports: [\r\n            __WEBPACK_IMPORTED_MODULE_1__angular_common__[\"a\" /* CommonModule */],\r\n            __WEBPACK_IMPORTED_MODULE_2__shared_shared_module__[\"a\" /* SharedModule */],\r\n            __WEBPACK_IMPORTED_MODULE_3__blade_routes__[\"a\" /* BladeRoutes */]\r\n        ],\r\n        declarations: [\r\n            __WEBPACK_IMPORTED_MODULE_4__components_blade_details_component__[\"a\" /* BladeDetailsComponent */]\r\n        ]\r\n    })\r\n], BladeModule);\r\n\r\n\n\n//////////////////\n// WEBPACK FOOTER\n// ./app/components/blade/blade.module.ts\n// module id = 566\n// module chunks = 0\n\n//# sourceURL=webpack:///./app/components/blade/blade.module.ts?");
+
+/***/ }),
+
+/***/ 568:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"a\", function() { return BladeDetailsComponent; });\n/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);\n/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(91);\nvar __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {\r\n    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;\r\n    if (typeof Reflect === \"object\" && typeof Reflect.decorate === \"function\") r = Reflect.decorate(decorators, target, key, desc);\r\n    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;\r\n    return c > 3 && r && Object.defineProperty(target, key, r), r;\r\n};\r\nvar __metadata = (this && this.__metadata) || function (k, v) {\r\n    if (typeof Reflect === \"object\" && typeof Reflect.metadata === \"function\") return Reflect.metadata(k, v);\r\n};\r\n\r\n\r\nvar BladeDetailsComponent = (function () {\r\n    function BladeDetailsComponent(route) {\r\n        this.route = route;\r\n        this.message = 'Hello from BladeDetailsComponent constructor';\r\n    }\r\n    BladeDetailsComponent.prototype.ngOnInit = function () {\r\n        var _this = this;\r\n        this.sub = this.route.params.subscribe(function (params) {\r\n            _this.bladeName = params['name'];\r\n        });\r\n    };\r\n    BladeDetailsComponent.prototype.ngOnDestroy = function () {\r\n        this.sub.unsubscribe();\r\n    };\r\n    return BladeDetailsComponent;\r\n}());\r\nBladeDetailsComponent = __decorate([\r\n    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__[\"b\" /* Component */])({\r\n        selector: 'blade-details',\r\n        template: __webpack_require__(572)\r\n    }),\r\n    __metadata(\"design:paramtypes\", [__WEBPACK_IMPORTED_MODULE_1__angular_router__[\"b\" /* ActivatedRoute */]])\r\n], BladeDetailsComponent);\r\n\r\n\n\n//////////////////\n// WEBPACK FOOTER\n// ./app/components/blade/components/blade-details.component.ts\n// module id = 568\n// module chunks = 0\n\n//# sourceURL=webpack:///./app/components/blade/components/blade-details.component.ts?");
+
+/***/ }),
+
+/***/ 570:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"a\", function() { return BladeRoutes; });\n/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_router__ = __webpack_require__(91);\n/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_blade_details_component__ = __webpack_require__(568);\n\r\n\r\nvar routes = [\r\n    { path: '', redirectTo: '/home', pathMatch: 'full' },\r\n    { path: ':name', component: __WEBPACK_IMPORTED_MODULE_1__components_blade_details_component__[\"a\" /* BladeDetailsComponent */] }\r\n];\r\nvar BladeRoutes = __WEBPACK_IMPORTED_MODULE_0__angular_router__[\"a\" /* RouterModule */].forChild(routes);\r\n\n\n//////////////////\n// WEBPACK FOOTER\n// ./app/components/blade/blade.routes.ts\n// module id = 570\n// module chunks = 0\n\n//# sourceURL=webpack:///./app/components/blade/blade.routes.ts?");
+
+/***/ }),
+
+/***/ 572:
+/***/ (function(module, exports) {
+
+eval("module.exports = \"\\r\\n\\r\\n<div class=\\\"coreui-portal\\\">\\r\\n    <main-nav></main-nav>\\r\\n\\r\\n    <div class=\\\"coreui-portal-main\\\">\\r\\n        <blade-nav class=\\\"coreui-sidebar coreui-sidebar-is-collapsed\\\"></blade-nav>\\r\\n\\r\\n        <div class=\\\"coreui-portal-content\\\">\\r\\n\\r\\n            <div class=\\\"container-fluid\\\">\\r\\n\\r\\n                <h1>{{message}}</h1>\\r\\n                <p>\\r\\n                    Blade name: {{bladeName}}\\r\\n                </p>\\r\\n            </div>\\r\\n\\r\\n        </div>\\r\\n    </div>\\r\\n</div>\"\n\n//////////////////\n// WEBPACK FOOTER\n// ./app/components/blade/components/blade-details.component.html\n// module id = 572\n// module chunks = 0\n\n//# sourceURL=webpack:///./app/components/blade/components/blade-details.component.html?");
+
+/***/ })
+
+});
