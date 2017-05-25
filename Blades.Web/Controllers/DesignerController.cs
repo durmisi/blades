@@ -20,7 +20,6 @@ namespace Blades.Web.Controllers
             return View();
         }
 
-
         public IActionResult Controls()
         {
             return View();

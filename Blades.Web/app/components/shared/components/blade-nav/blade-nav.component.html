@@ -15,7 +15,7 @@
 
             <li *ngFor="let blade of blades">
                 <a href="#" title=" {{blade.title}}" [routerLink]="['/blade', blade.name]">
-                    <div class="coreui-sidebar-icon"><i class="{{blade.class}}"></i>
+                    <div class="coreui-sidebar-icon"><i class="{{blade.iconClass}}"></i>
                     </div>
                     <div class="coreui-sidebar-label">
                         <span [innerHtml]="blade.title"></span>

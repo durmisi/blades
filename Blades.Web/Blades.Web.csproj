@@ -8,6 +8,11 @@
     <PackageTargetFallback>$(PackageTargetFallback);portable-net45+win8+wp8+wpa81;</PackageTargetFallback>
   </PropertyGroup>
 
+  <PropertyGroup>
+    <!-- Makes the TypeScript compilation task a no-op -->
+    <TypeScriptCompileBlocked>true</TypeScriptCompileBlocked>
+  </PropertyGroup>
+
   <ItemGroup>
     <Compile Remove="wwwroot\assets\**" />
     <Compile Remove="wwwroot\dist\**" />
@@ -34,9 +39,13 @@
     <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="1.1.2" />
     <PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="1.1.1" />
     <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="1.1.1" />
+    <PackageReference Include="Microsoft.DotNet.Watcher.Tools" Version="1.0.1" />
   </ItemGroup>
   <ItemGroup>
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="1.0.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <DotNetCliToolReference Include="Microsoft.DotNet.Watcher.Tools" Version="1.0.1" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app\components\about\about.module.ts" />

@@ -1,14 +1,11 @@
 ﻿<div class="coreui-portal">
     <main-nav></main-nav>
-
     <div class="coreui-portal-main">
         <blade-nav class="coreui-sidebar coreui-sidebar-is-collapsed"></blade-nav>
-
         <div class="coreui-portal-content">
             <div class="coreui-blade-layout">
-
                 <div *ngFor="let blade of activeBlades;">
-                    <div class="blade {{blade.class}} {{blade.fullScreenClass}}">
+                    <div class="blade {{getClass(blade)}}">
                         <div class="blade-header">
 
                             <div class="blade-header-title">
@@ -26,16 +23,50 @@
                             </div>
 
                             <div class="blade-commands">
-                                <!-- ko foreach: commands -->
-                                <button type="button" data-bind="attr: { title: title }, click: click">
-                                    <i class="fa fa-lg" data-bind="css: icon"></i> <span data-bind="text: title"></span>
+                                <button type="button" *ngFor="let bladeCommand of blade.bladeCommands;" (click)="bladeCommand.execute()">
+                                    <i class="fa fa-lg" data-bind="css: icon"></i>
+                                    <span>{{bladeCommand.title}}</span>
                                 </button>
-                                <!-- /ko -->
                             </div>
                         </div>
                         <div class="blade-content-wrapper" style="padding: 15px">
-                            //data-bind="dynamicHtml: content"
-                            {{blade.title}}
+                            
+                            <div class="row" *ngIf="blade.bladeLayout==1">
+                                <div class="col-md-12">
+                                    //data-bind="dynamicHtml: content"
+                                    {{blade.title}}
+                                </div>
+                            </div>
+
+                            <div class="row" *ngIf="blade.bladeLayout==2">
+                                <div class="col-md-6">
+                                    //data-bind="dynamicHtml: content"
+                                    {{blade.title}}
+                                </div>
+
+                                <div class="col-md-6">
+                                    //data-bind="dynamicHtml: content"
+                                    {{blade.title}}
+                                </div>
+                            </div>
+
+                            <div class="row" *ngIf="blade.bladeLayout==3">
+                                <div class="col-md-4">
+                                    //data-bind="dynamicHtml: content"
+                                    {{blade.title}}
+                                </div>
+
+                                <div class="col-md-4">
+                                    //data-bind="dynamicHtml: content"
+                                    {{blade.title}}
+                                </div>
+
+                                <div class="col-md-4">
+                                    //data-bind="dynamicHtml: content"
+                                    {{blade.title}}
+                                </div>
+                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -43,6 +74,4 @@
             </div>
         </div>
     </div>
-
-
 </div>
