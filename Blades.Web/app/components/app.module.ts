@@ -8,6 +8,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SharedModule } from './shared/shared.module';
 import { CoreModule } from './core/core.module';
 import { HomeModule } from './home/home.module';
+import { BladeFormsModule } from './forms/blade-forms.module';
 
 import { Configuration } from './app.constants';
 import { AppRoutes } from './app.routes';
@@ -26,7 +27,8 @@ import { AppComponent } from './app.component';
         AppRoutes,
         SharedModule,
         CoreModule.forRoot(),
-        HomeModule
+        HomeModule,
+        BladeFormsModule
     ],
 
     declarations: [
@@ -36,4 +38,5 @@ import { AppComponent } from './app.component';
     bootstrap: [AppComponent]
 })
 
-export class AppModule { }
+export class AppModule {
+}
