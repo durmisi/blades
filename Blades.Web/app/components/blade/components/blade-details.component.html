@@ -39,6 +39,15 @@
 
                                     <dropdown-picker-single></dropdown-picker-single>
 
+
+
+<h3>Reactive Forms</h3>
+<form [formGroup]="myForm" (ngSubmit)="submit()">
+  <app-switch formControlName="mySwitch" [label]="'My Switch'"></app-switch>
+  <button>Submit</button>
+</form>
+
+
                                 </div>
                             </div>
 

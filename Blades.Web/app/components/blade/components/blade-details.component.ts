@@ -1,6 +1,9 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
+import { FormGroup,FormBuilder } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { Blade, BladeLayout, BladeSize, OpenLinkCommand } from '../../models/models';
+
+
 
 @Component({
     selector: 'blade-details',
@@ -12,11 +15,19 @@ export class BladeDetailsComponent implements OnInit, OnDestroy {
     private sub: any;
     private activeBlades: Blade[];
 
-    constructor(private route: ActivatedRoute) {
+
+ myForm: FormGroup;
+
+    constructor(private route: ActivatedRoute,private formBuilder: FormBuilder) {
 
     }
 
     ngOnInit() {
+
+   this.myForm = this.formBuilder.group({
+      mySwitch: [true]
+    });
+
         this.sub = this.route.params.subscribe(params => {
             this.bladeName = params['name'];
 

@@ -10,7 +10,7 @@ import { CustomFooterComponent } from './components/customfooter/customfooter.co
 import { MainNavComponent } from './components/main-nav/main-nav.component';
 import { BladeNavComponent } from './components/blade-nav/blade-nav.component';
 import { DropdownPickerSingleComponent } from './components/dropdown-picker-single/dropdown-picker-single.component';
-
+import {SwitchComponent} from './components/switch/switch.component';
 
 //import 'ng2-select.css';
 
@@ -26,14 +26,16 @@ import { DropdownPickerSingleComponent } from './components/dropdown-picker-sing
         MainNavComponent,
         CustomFooterComponent,
         BladeNavComponent,
-        DropdownPickerSingleComponent
+        DropdownPickerSingleComponent,
+        SwitchComponent
     ],
 
     exports: [
         MainNavComponent,
         CustomFooterComponent,
         BladeNavComponent,
-        DropdownPickerSingleComponent
+        DropdownPickerSingleComponent,
+        SwitchComponent
     ]
 })
 export class SharedModule {}
