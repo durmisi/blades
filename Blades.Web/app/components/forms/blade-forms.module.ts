@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { FormsService } from './services/forms.service';
+import { DynamicTypeBuilder } from './services/type.builder';
+import { DynamicTemplateBuilder } from './services/template.builder';
 import { BladeFormComponent } from './components/blade-form/blade-form.component';
 
 @NgModule({
@@ -18,6 +20,6 @@ import { BladeFormComponent } from './components/blade-form/blade-form.component
     exports: [
      BladeFormComponent
     ],
-    providers:[FormsService]
+    providers:[FormsService,DynamicTypeBuilder,DynamicTemplateBuilder]
 })
 export class BladeFormsModule {}

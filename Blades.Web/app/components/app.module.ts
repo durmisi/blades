@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { COMPILER_PROVIDERS } from '@angular/compiler';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { SharedModule } from './shared/shared.module';
@@ -33,6 +34,10 @@ import { AppComponent } from './app.component';
 
     declarations: [
         AppComponent
+    ],
+
+    providers:[
+        COMPILER_PROVIDERS
     ],
 
     bootstrap: [AppComponent]

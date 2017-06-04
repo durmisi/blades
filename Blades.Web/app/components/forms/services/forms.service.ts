@@ -44,4 +44,18 @@ export class FormsService {
         bladeForm.FormGroup.AddBladeFormControl();
         return bladeForm;
     }
+
+    public prepareTemplate(entity: any, useTextarea: boolean)
+    {
+        let editorName = useTextarea  ? "text-editor" : "string-editor";
+      
+        let properties = Object.keys(entity);
+        let template = "<form >";
+                        
+        properties.forEach((propertyName) =>{
+            template += `<${editorName} [propertyName]="'${propertyName}'" [entity]="entity" ></${editorName}>`;
+        });
+    
+        return template + "</form>";
+    }
 }
