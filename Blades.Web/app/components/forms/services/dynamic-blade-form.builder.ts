@@ -1,30 +1,29 @@
 import { Component, ComponentFactory, NgModule, Input, Injectable} from '@angular/core';
 import { JitCompiler } from '@angular/compiler';
-import { EditorsModule } from '../../editors/editors.module';
 import * as _ from 'underscore';
 
-export interface IHaveDynamicData { 
+import { EditorsModule } from '../../editors/editors.module';
+import { BladeForm } from '../services/forms.service';
+
+export interface DynamicBladeFormComponent { 
      entity: any;
+     bladeForm:BladeForm,
+     submit():void
 }
 
 @Injectable()
-export class DynamicTypeBuilder {
+export class DynamicBladeFormBuilder {
 
   // wee need Dynamic component builder
-  constructor(protected compiler: JitCompiler) {
-
-  }
+  constructor(protected compiler: JitCompiler) {  }
     
   // this object is singleton - so we can use this as a cache
-  private _cacheOfFactories: {[templateKey: string]: ComponentFactory<IHaveDynamicData>} = {};
+  private _cacheOfFactories: {[templateKey: string]: ComponentFactory<DynamicBladeFormComponent>} = {};
   
-  public createComponentFactory(template: string) : Promise<ComponentFactory<IHaveDynamicData>> {
-
+  public createComponentFactory(template: string) : Promise<ComponentFactory<DynamicBladeFormComponent>> {
     let factory = this._cacheOfFactories[template];
-
     if (factory) {
         console.log("Module and Type are returned from cache")
-       
         return new Promise((resolve) => {
             resolve(factory);
         });
@@ -40,9 +39,7 @@ export class DynamicTypeBuilder {
             .then((moduleWithFactories) =>
             {
                 factory = _.find(moduleWithFactories.componentFactories, { componentType: type });
-
                 this._cacheOfFactories[template] = factory;
-
                 resolve(factory);
             });
     });
@@ -50,14 +47,17 @@ export class DynamicTypeBuilder {
   
   protected createNewComponent (tmpl:string) {
       @Component({
-          selector: 'dynamic-component',
+          selector: 'dynamic-blade-form',
           template: tmpl,
       })
-      class CustomDynamicComponent  implements IHaveDynamicData {
-          @Input()  public entity: any;
+      class DynamicBladeFormComponent implements DynamicBladeFormComponent {
+          @Input() 
+          bladeForm: BladeForm;
+          @Input() 
+          public entity: any;
       };
       // a component for this particular template
-      return CustomDynamicComponent;
+      return DynamicBladeFormComponent;
   }
 
   protected createComponentModule (componentType: any) {

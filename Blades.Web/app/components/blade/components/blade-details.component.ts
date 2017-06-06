@@ -37,7 +37,7 @@ export class BladeDetailsComponent implements OnInit, OnDestroy {
                 let blade = new Blade();
                 blade.title = this.bladeName;
                 blade.subTitle = this.bladeName;
-                blade.bladeSize = BladeSize.Small;
+                blade.bladeSize = BladeSize.Large;
                 blade.bladeLayout = BladeLayout.OneColumn;
                 blade.bladeCommands.push(new OpenLinkCommand('Open Google', 'http://www.google.com'));
                 this.activeBlades.push(blade);
