@@ -1,0 +1,38 @@
+body {
+    background: #eeeded !important;
+}
+
+.panel-heading {
+    border-bottom: 1px solid #F0F0F0;
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    top: 0;
+}
+
+.panel-heading .panel-title {
+    padding: 10px;
+    margin: 0;
+}
+
+.panel-body {
+    overflow: auto;
+    padding: 0 10px 10px;
+    position: relative;
+    top: 37px;
+    bottom: 0;
+}
+
+.gridster-item-prototype.is-over .gridster-item-inner {
+    visibility: visible;
+}
+
+.gridster-item-resizable-handler {
+    background: #eeeded !important;
+}
+
+.gridster-item-inner {
+    background: #fff;
+    height: 100%;
+    padding: 15px;
+}

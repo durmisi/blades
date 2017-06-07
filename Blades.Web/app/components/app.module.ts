@@ -23,8 +23,7 @@ import { AppComponent } from './app.component';
         FormsModule,
         HttpModule,
         NgbModule.forRoot(),
-
-
+        
         AppRoutes,
         SharedModule,
         CoreModule.forRoot(),
