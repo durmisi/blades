@@ -2,37 +2,62 @@ body {
     background: #eeeded !important;
 }
 
-.panel-heading {
-    border-bottom: 1px solid #F0F0F0;
-    display: inline-block;
-    position: relative;
-    width: 100%;
-    top: 0;
-}
-
-.panel-heading .panel-title {
-    padding: 10px;
-    margin: 0;
-}
-
-.panel-body {
-    overflow: auto;
-    padding: 0 10px 10px;
-    position: relative;
-    top: 37px;
-    bottom: 0;
-}
-
-.gridster-item-prototype.is-over .gridster-item-inner {
-    visibility: visible;
-}
-
-.gridster-item-resizable-handler {
+.gridster {
     background: #eeeded !important;
 }
 
-.gridster-item-inner {
-    background: #fff;
+.margin-slider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.main-toolbar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    flex: 1 auto;
+    flex-wrap: wrap;
+    width: 100%;
     height: 100%;
-    padding: 15px;
+}
+
+:host /deep/ .mat-toolbar-row {
+    height: initial !important;
+}
+
+md-toolbar {
+    flex: 0 0 auto;
+}
+
+gridster-item div.button-holder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+gridster-item .item-buttons {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+gridster-item .gridster-item-content {
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+:host {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }

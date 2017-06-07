@@ -8,7 +8,7 @@ import { SharedModule } from '../shared/shared.module';
 import { HomeRoutes } from './home.routes';
 import { HomeComponent } from './components/home.component';
 
-import { GridsterModule } from 'angular2gridster';
+import { GridsterModule } from 'angular-gridster2';
 
 @NgModule({
     imports: [
