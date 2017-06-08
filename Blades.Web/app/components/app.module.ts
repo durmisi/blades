@@ -6,6 +6,8 @@ import { HttpModule } from '@angular/http';
 import { COMPILER_PROVIDERS } from '@angular/compiler';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
+
+
 import { SharedModule } from './shared/shared.module';
 import { CoreModule } from './core/core.module';
 import { HomeModule } from './home/home.module';
@@ -24,6 +26,7 @@ import { AppComponent } from './app.component';
         HttpModule,
         NgbModule.forRoot(),
         
+
         AppRoutes,
         SharedModule,
         CoreModule.forRoot(),

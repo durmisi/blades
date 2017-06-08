@@ -4,6 +4,7 @@ import { Component, OnInit, HostListener, ViewChild } from '@angular/core';
 
 import {GridsterConfig} from 'angular-gridster2';
 
+import { DxButtonModule } from 'devextreme-angular';
 
 import './home.component.css';
 
