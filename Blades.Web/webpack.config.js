@@ -1,8 +1,102 @@
-/// <binding />
-var environment = (process.env.NODE_ENV || "development").trim();
+const path = require('path');
+const webpack = require('webpack');
+const merge = require('webpack-merge');
+const CheckerPlugin = require('awesome-typescript-loader').CheckerPlugin;
+var HtmlWebpackPlugin = require('html-webpack-plugin');
+var CopyWebpackPlugin = require('copy-webpack-plugin');
+var CleanWebpackPlugin = require('clean-webpack-plugin');
 
-if (environment === "development") {
-    module.exports = require('./webpack.dev.js');
-} else {
-    module.exports = require('./webpack.prod.js');
-}
+module.exports = (env) => {
+    // Configuration in common to both client-side and server-side bundles
+    const isDevBuild = !(env && env.prod);
+    const sharedConfig = {
+        stats: { modules: false },
+        context: __dirname,
+        resolve: {
+            extensions: ['.ts', '.js', '.json', '.css', '.scss', '.html']
+        },
+        output: {
+            filename: '[name].js',
+            publicPath: '/dist/' // Webpack dev middleware, if enabled, handles requests for this URL prefix
+        },
+        module: {
+            rules: [
+                {
+                    test: /\.ts$/,
+                    include: /ClientApp/,
+                    use: [
+                        'awesome-typescript-loader?silent=true',
+                        'angular-router-loader',
+                        'angular2-template-loader',
+                        'source-map-loader',
+                        'tslint-loader'
+                    ]
+                },
+                {
+                    test: /\.html$/,
+                    use: 'html-loader?minimize=false'
+                },
+                {
+                    test: /\.css$/,
+                    loader: 'style-loader!css-loader'
+                },
+                {
+                    test: /\.(png|jpe?g|gif|svg|woff|woff2|ttf|eot|ico)?(\?v=[0–9]\.[0–9]\.[0–9])?$/,
+                    loader: 'file?name=fonts/[name].[hash].[ext]?'
+                },
+            ]
+        },
+        plugins: [
+            new CheckerPlugin(),
+        ]
+    };
+
+    // Configuration for client-side bundle suitable for running in browsers
+    const clientBundleOutputDir = './wwwroot/dist';
+    const clientBundleConfig = merge(sharedConfig, {
+        entry: { 'main-client': './ClientApp/boot-client.ts' },
+        output: { path: path.join(__dirname, clientBundleOutputDir) },
+        plugins: [
+            new webpack.DllReferencePlugin({
+                context: __dirname,
+                manifest: require('./wwwroot/dist/vendor-manifest.json')
+            })
+        ].concat(isDevBuild ? [
+            // Plugins that apply in development builds only
+            new webpack.SourceMapDevToolPlugin({
+                filename: '[file].map', // Remove this line if you prefer inline source maps
+                moduleFilenameTemplate: path.relative(clientBundleOutputDir, '[resourcePath]') // Point sourcemap entries to the original file locations on disk
+            }),
+            new webpack.ProvidePlugin({
+                jQuery: 'jquery',
+                $: 'jquery',
+                jquery: 'jquery'
+            })
+        ] : [
+                // Plugins that apply in production builds only
+                new webpack.optimize.UglifyJsPlugin()
+            ])
+    });
+
+    // Configuration for server-side (prerendering) bundle suitable for running in Node
+    const serverBundleConfig = merge(sharedConfig, {
+        resolve: { mainFields: ['main'] },
+        entry: { 'main-server': './ClientApp/boot-server.ts' },
+        plugins: [
+            new webpack.DllReferencePlugin({
+                context: __dirname,
+                manifest: require('./ClientApp/dist/vendor-manifest.json'),
+                sourceType: 'commonjs2',
+                name: './vendor'
+            })
+        ],
+        output: {
+            libraryTarget: 'commonjs',
+            path: path.join(__dirname, './ClientApp/dist')
+        },
+        target: 'node',
+        devtool: 'source-map'
+    });
+
+    return [clientBundleConfig, serverBundleConfig];
+};

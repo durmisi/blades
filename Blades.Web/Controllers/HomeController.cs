@@ -6,7 +6,7 @@ namespace Blades.Web.Controllers
     {
         public IActionResult Index()
         {
-            return File("~/index.html", "text/html");
+             return View();
         }
 
         public IActionResult Error()

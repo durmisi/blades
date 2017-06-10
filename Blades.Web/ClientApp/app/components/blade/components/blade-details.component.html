@@ -1,0 +1,85 @@
+﻿<div class="coreui-portal">
+    <main-nav></main-nav>
+    <div class="coreui-portal-main">
+        <blade-nav class="coreui-sidebar coreui-sidebar-is-collapsed"></blade-nav>
+        <div class="coreui-portal-content">
+            <div class="coreui-blade-layout">
+                <div *ngFor="let blade of activeBlades;">
+                    <div class="blade {{getClass(blade)}}">
+                        <div class="blade-header">
+
+                            <div class="blade-header-title">
+                                <h2>{{blade.title}}</h2>
+                                <h3>{{blade.subTitle}}</h3>
+                            </div>
+
+                            <div class="blade-actions">
+                                <button title="Expand" type="button" (click)="expandBlade(blade)">
+                                    <i class="fa fa-expand fa-lg"></i>
+                                </button>
+                                <button title="Close" type="button" (click)="removeBlade(blade)">
+                                    <i class="fa fa-close fa-lg"></i>
+                                </button>
+                            </div>
+
+                            <div class="blade-commands">
+                                <button type="button" *ngFor="let bladeCommand of blade.bladeCommands;" (click)="bladeCommand.execute()">
+                                    <i class="fa fa-lg" data-bind="css: icon"></i>
+                                    <span>{{bladeCommand.title}}</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="blade-content-wrapper" style="padding: 15px">
+
+                            <div class="row" *ngIf="blade.bladeLayout==1">
+                                <div class="col-md-12">
+                                    //data-bind="dynamicHtml: content" {{blade.title}}
+
+                                    <blade-form [formId]="123"></blade-form>
+
+                                    <!--<dropdown-picker-single></dropdown-picker-single>
+
+
+
+<h3>Reactive Forms</h3>
+<form [formGroup]="myForm" (ngSubmit)="submit()">
+  <app-switch formControlName="mySwitch" [label]="'My Switch'"></app-switch>
+  <button>Submit</button>
+</form>-->
+
+
+                                </div>
+                            </div>
+
+                            <div class="row" *ngIf="blade.bladeLayout==2">
+                                <div class="col-md-6">
+                                    //data-bind="dynamicHtml: content" {{blade.title}}
+                                </div>
+
+                                <div class="col-md-6">
+                                    //data-bind="dynamicHtml: content" {{blade.title}}
+                                </div>
+                            </div>
+
+                            <div class="row" *ngIf="blade.bladeLayout==3">
+                                <div class="col-md-4">
+                                    //data-bind="dynamicHtml: content" {{blade.title}}
+                                </div>
+
+                                <div class="col-md-4">
+                                    //data-bind="dynamicHtml: content" {{blade.title}}
+                                </div>
+
+                                <div class="col-md-4">
+                                    //data-bind="dynamicHtml: content" {{blade.title}}
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

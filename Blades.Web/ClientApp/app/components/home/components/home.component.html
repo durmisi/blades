@@ -1,0 +1,38 @@
+﻿<div class="coreui-portal">
+    <main-nav></main-nav>
+
+    <div class="coreui-portal-main">
+        <blade-nav class="coreui-sidebar coreui-sidebar-is-collapsed"></blade-nav>
+
+        <div class="coreui-portal-content">
+
+            <ngb-alert type="warning">Dashboard content will goes here...</ngb-alert>
+
+            <gridster class="gridster" [options]="options">
+                <gridster-item [item]="item" *ngFor="let item of dashboard">
+                    <div class="button-holder">
+                        <div class="gridster-item-content" *ngIf="item.hasContent">
+                            <div class="stuff">
+                                Some content to select and click without dragging the widget
+                            </div>
+                        </div>
+                        <div class="item-buttons" *ngIf="item.hasContent">
+                            <button class="drag-handler">
+          <!--<md-icon>open_with</md-icon>-->
+        open_with
+        </button>
+                            <button class="remove-button" (click)="removeItem($event, item)" (touchstart)="removeItem($event, item)" mdTooltip="Remove">
+          <!--<md-icon>clear</md-icon>-->clear
+        </button>
+                        </div>
+                        <label *ngIf="!item.hasContent">{{item.label}}</label>
+                        <button md-mini-fab *ngIf="!item.hasContent" (click)="removeItem($event, item)" (touchstart)="removeItem($event, item)" mdTooltip="Remove">
+        <!--<md-icon>clear</md-icon>-->remove
+      </button>
+                    </div>
+                </gridster-item>
+            </gridster>
+
+        </div>
+    </div>
+</div>

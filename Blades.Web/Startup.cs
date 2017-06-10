@@ -9,6 +9,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.FileProviders;
 using Microsoft.Extensions.Logging;
+using Microsoft.AspNetCore.SpaServices.Webpack;
 
 namespace Blades.Web
 {
@@ -42,6 +43,10 @@ namespace Blades.Web
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                
+                app.UseWebpackDevMiddleware(new WebpackDevMiddlewareOptions {
+                    HotModuleReplacement = true
+                });
             }
             else
             {
@@ -50,16 +55,17 @@ namespace Blades.Web
 
             app.UseStaticFiles();
 
-            ServeFromDirectory(app, env, "node_modules");
+        // ServeFromDirectory(app, env, "node_modules");
 
-            app.UseMvc(routes =>
+           app.UseMvc(routes =>
             {
                 routes.MapRoute(
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
 
-                    routes.MapRoute("spa-fallback", "{*anything}", new { controller = "Home", action = "Index" });
-       
+                routes.MapSpaFallbackRoute(
+                    name: "spa-fallback",
+                    defaults: new { controller = "Home", action = "Index" });
             });
         }
 
@@ -70,7 +76,6 @@ namespace Blades.Web
                 FileProvider = new PhysicalFileProvider(
                     Path.Combine(env.ContentRootPath, path)
                 ),
-                
                 RequestPath = "/" + path
             });
         }
