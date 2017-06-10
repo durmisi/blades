@@ -36,6 +36,9 @@ module.exports = (env) => {
 
                 '@ng-bootstrap/ng-bootstrap',
 
+                'devextreme/dist/css/dx.common.css',
+                'devextreme/dist/css/dx.light.css',
+
                 'es6-shim',
                 'es6-promise',
                 'event-source-polyfill',

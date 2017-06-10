@@ -3,30 +3,25 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
 import { FormsModule } from '@angular/forms';
-import { SelectModule } from 'ng2-select';
 
 
 import { CustomFooterComponent } from './components/customfooter/customfooter.component';
 import { MainNavComponent } from './components/main-nav/main-nav.component';
 import { BladeNavComponent } from './components/blade-nav/blade-nav.component';
-import { DropdownPickerSingleComponent } from './components/dropdown-picker-single/dropdown-picker-single.component';
-import {SwitchComponent} from './components/switch/switch.component';
+import { SwitchComponent } from './components/switch/switch.component';
 
-//import 'ng2-select.css';
 
 @NgModule({
     imports: [
         CommonModule,
         RouterModule,
-        FormsModule,
-        SelectModule
+        FormsModule
     ],
 
     declarations: [
         MainNavComponent,
         CustomFooterComponent,
         BladeNavComponent,
-        DropdownPickerSingleComponent,
         SwitchComponent
     ],
 
@@ -34,8 +29,7 @@ import {SwitchComponent} from './components/switch/switch.component';
         MainNavComponent,
         CustomFooterComponent,
         BladeNavComponent,
-        DropdownPickerSingleComponent,
         SwitchComponent
     ]
 })
-export class SharedModule {}
+export class SharedModule { }
