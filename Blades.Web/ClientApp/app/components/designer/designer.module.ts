@@ -2,7 +2,9 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { DesignerRoutes } from './designer.routes';
-import { DesignerComponent } from './components/designer.component';
+import { DesignerComponents } from './designer.routes';
+
+import { NavigationComponent } from './components/navigation.component';
 
 @NgModule({
     imports: [
@@ -11,7 +13,8 @@ import { DesignerComponent } from './components/designer.component';
     ],
 
     declarations: [
-        DesignerComponent
+        NavigationComponent,
+        ...DesignerComponents
     ]
 })
 

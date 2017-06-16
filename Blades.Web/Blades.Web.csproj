@@ -67,10 +67,12 @@
     <Content Remove="ClientApp\**" />
   </ItemGroup>
 <ItemGroup>
-  <Folder Include="ClientApp\app\components\designer\components\controls\" />
-  <Folder Include="ClientApp\app\components\designer\components\editors\" />
-  <Folder Include="ClientApp\app\components\designer\components\forms\" />
-  <Folder Include="ClientApp\app\components\designer\components\models\" />
+  <None Update="ClientApp\app\components\designer\components\blades\new-blade.component.ts">
+    <DependentUpon>new-blade.component.html</DependentUpon>
+  </None>
+  <None Update="ClientApp\app\components\designer\components\controls\new-control.component.ts">
+    <DependentUpon>new-control.component.html</DependentUpon>
+  </None>
 </ItemGroup>
   <Target Name="RunWebpack" AfterTargets="ComputeFilesToPublish">
     <!-- As part of publishing, ensure the JS resources are freshly built in production mode -->
