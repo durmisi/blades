@@ -4,8 +4,8 @@ import { FormsModule }   from "@angular/forms";
 
 // make all editors as one DYNAMIC_DIRECTIVES 
 import { forwardRef }   from '@angular/core';
-import { StringEditor } from './StringEditor';
-import { TextEditor }   from './TextEditor';
+import { StringEditor } from './components/StringEditor';
+import { TextEditor }   from './components/TextEditor';
 
 export const DYNAMIC_DIRECTIVES = [
   forwardRef(() => StringEditor),

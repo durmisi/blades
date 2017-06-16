@@ -5,9 +5,6 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { COMPILER_PROVIDERS } from '@angular/compiler';
 
-//externals
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-
 //app
 import { sharedConfig } from './app.module.shared';
 import { AppConfig } from './app.config';
@@ -19,8 +16,6 @@ import { AppConfig } from './app.config';
         BrowserModule,
         FormsModule,
         HttpModule,
-
-        NgbModule.forRoot(),
 
         ...sharedConfig.imports
     ],

@@ -8,21 +8,19 @@ import { AppRoutes } from './app.routes';
 
 //app modules
 import { SharedModule } from './shared/shared.module';
-import { CoreModule } from './core/core.module';
-import { HomeModule } from './home/home.module';
+import { BladesModule } from './blades/blades.module';
 import { BladeFormsModule } from './forms/blade-forms.module';
 
 export const sharedConfig: NgModule = {
     imports: [
         CommonModule,
         AppRoutes,
+        BladesModule,
         SharedModule,
-        CoreModule.forRoot(),
-        HomeModule,
         BladeFormsModule
     ],
     declarations: [
-        AppComponent,
+        AppComponent
     ],
     bootstrap: [
         AppComponent
