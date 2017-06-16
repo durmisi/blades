@@ -14,12 +14,19 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="app\**" />
+    <Compile Remove="ClientApp\dist\**" />
     <Compile Remove="wwwroot\assets\**" />
     <Compile Remove="wwwroot\dist\**" />
+    <Content Remove="app\**" />
     <Content Remove="wwwroot\assets\**" />
     <Content Remove="wwwroot\dist\**" />
+    <EmbeddedResource Remove="app\**" />
+    <EmbeddedResource Remove="ClientApp\dist\**" />
     <EmbeddedResource Remove="wwwroot\assets\**" />
     <EmbeddedResource Remove="wwwroot\dist\**" />
+    <None Remove="app\**" />
+    <None Remove="ClientApp\dist\**" />
     <None Remove="wwwroot\assets\**" />
     <None Remove="wwwroot\dist\**" />
   </ItemGroup>
@@ -48,36 +55,8 @@
     <DotNetCliToolReference Include="Microsoft.DotNet.Watcher.Tools" Version="1.0.1" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="app\components\about\about.module.ts" />
-    <None Include="app\components\about\about.routes.ts" />
-    <None Include="app\components\about\components\about.component.html" />
-    <None Include="app\components\about\components\about.component.ts" />
-    <None Include="app\components\app.component.html" />
-    <None Include="app\components\app.component.ts" />
-    <None Include="app\components\app.constants.ts" />
-    <None Include="app\components\app.module.ts" />
-    <None Include="app\components\app.routes.ts" />
-    <None Include="app\components\core\core.module.ts" />
-    <None Include="app\components\core\services\thing-data.service.ts" />
-    <None Include="app\components\home\components\home.component.html" />
-    <None Include="app\components\home\components\home.component.ts" />
-    <None Include="app\components\home\home.module.ts" />
-    <None Include="app\components\home\home.routes.ts" />
-    <None Include="app\components\shared\components\customfooter\customfooter.component.html" />
-    <None Include="app\components\shared\components\customfooter\customfooter.component.ts" />
-    <None Include="app\components\shared\shared.module.ts" />
-    <None Include="app\images\damienbod.jpg" />
-    <None Include="app\images\fabianGosebrink.jpg" />
-    <None Include="app\images\RobertoSimonetti.jpg" />
-    <None Include="app\index.html" />
-    <None Include="app\main.ts" />
-    <None Include="app\polyfills.ts" />
-    <None Include="app\vendor.ts" />
     <None Include="favicon.ico" />
     <None Include="webpack.config.js" />
-    <None Include="webpack.dev.js" />
-    <None Include="webpack.helpers.js" />
-    <None Include="webpack.prod.js" />
     <None Include="yarn.lock" />
   </ItemGroup>
 <ItemGroup>
@@ -87,6 +66,12 @@
     <!-- Files not to publish (note that the 'dist' subfolders are re-added below) -->
     <Content Remove="ClientApp\**" />
   </ItemGroup>
+<ItemGroup>
+  <Folder Include="ClientApp\app\components\designer\components\controls\" />
+  <Folder Include="ClientApp\app\components\designer\components\editors\" />
+  <Folder Include="ClientApp\app\components\designer\components\forms\" />
+  <Folder Include="ClientApp\app\components\designer\components\models\" />
+</ItemGroup>
   <Target Name="RunWebpack" AfterTargets="ComputeFilesToPublish">
     <!-- As part of publishing, ensure the JS resources are freshly built in production mode -->
     <Exec Command="npm install" />
